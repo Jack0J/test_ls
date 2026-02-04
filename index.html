@@ -98,12 +98,70 @@
             </section>
         </div>
 
+        <div class="contacts-section">
+            <div class="contacts-card">
+                <h3>Остались вопросы? Свяжитесь с нами</h3>
+                <div class="contacts-info">
+                    <div class="contact-item">
+                        <span class="contact-label">Электронная почта:</span>
+                        <a href="mailto:sale@2k-shop.ru" class="contact-value">sale@2k-shop.ru</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">Телефон:</span>
+                        <a href="tel:+74951501151" class="contact-value">+7 (495) 150 11 51</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <div class="form-card">
+                <h3>Задать вопрос или уточнить детали</h3>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">Имя и фамилия *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Контактный номер *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Электронная почта *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Сообщение</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="file" class="file-label">
+                                <span class="file-icon">📎</span>
+                                Прикрепить файл
+                                <input type="file" id="file" name="file" class="file-input">
+                            </label>
+                            <span class="file-hint">Максимальный размер файла: 10MB</span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <button type="submit" class="submit-btn">Отправить</button>
+                        <p class="privacy-note">
+                            Нажимая кнопку «Отправить» на данной странице, вы соглашаетесь с политикой конфиденциальности.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <footer class="footer">
             <p>Система скидок актуальна на <span id="currentDate"></span></p>
         </footer>
     </div>
 
     <script>
+        // Установка текущей даты
         const date = new Date();
         const formattedDate = date.toLocaleDateString('ru-RU', {
             day: 'numeric',
@@ -111,6 +169,29 @@
             year: 'numeric'
         });
         document.getElementById('currentDate').textContent = formattedDate;
+
+        // Обработка формы
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // В реальном проекте здесь будет отправка на сервер
+            alert('Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.');
+            this.reset();
+        });
+
+        // Показать имя выбранного файла
+        document.getElementById('file').addEventListener('change', function(e) {
+            const fileName = this.files[0] ? this.files[0].name : 'Файл не выбран';
+            const label = this.previousElementSibling;
+            if (label && label.classList.contains('file-label')) {
+                const textSpan = label.querySelector('.file-text') || document.createElement('span');
+                textSpan.className = 'file-text';
+                textSpan.textContent = `: ${fileName}`;
+                if (!label.querySelector('.file-text')) {
+                    label.appendChild(textSpan);
+                }
+            }
+        });
     </script>
 </body>
 </html>

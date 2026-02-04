@@ -13,8 +13,10 @@
     --gray-dark: #6c757d;
     --blue: #0d6efd;
     --blue-light: #e7f1ff;
+    --blue-dark: #0a58ca;
     --border: 1px solid #dee2e6;
     --shadow: 0 2px 4px rgba(0,0,0,0.05);
+    --radius: 4px;
 }
 
 body {
@@ -274,6 +276,200 @@ body {
     font-weight: bold;
 }
 
+/* Контакты */
+.contacts-section {
+    margin: 30px 0;
+}
+
+.contacts-card {
+    background: var(--gray-light);
+    border: var(--border);
+    padding: 25px;
+    text-align: center;
+}
+
+.contacts-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--black);
+}
+
+.contacts-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    text-align: left;
+}
+
+.contact-label {
+    display: block;
+    font-size: 13px;
+    color: var(--gray-dark);
+    margin-bottom: 5px;
+}
+
+.contact-value {
+    font-size: 16px;
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-value:hover {
+    text-decoration: underline;
+}
+
+/* Форма обратной связи */
+.form-section {
+    margin: 30px 0;
+}
+
+.form-card {
+    background: var(--white);
+    border: var(--border);
+    padding: 25px;
+    box-shadow: var(--shadow);
+}
+
+.form-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: var(--black);
+}
+
+.contact-form {
+    margin-top: 20px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--black);
+}
+
+.form-group label.required:after {
+    content: " *";
+    color: #dc3545;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px 12px;
+    border: var(--border);
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--black);
+    background: var(--white);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Поле загрузки файла */
+.file-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border: var(--border);
+    border-radius: var(--radius);
+    background: var(--white);
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--gray-dark);
+    transition: all 0.2s;
+}
+
+.file-label:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+.file-icon {
+    font-size: 16px;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-text {
+    color: var(--black);
+    margin-left: 5px;
+    font-style: italic;
+    font-size: 13px;
+}
+
+.file-hint {
+    display: block;
+    font-size: 12px;
+    color: var(--gray-dark);
+    margin-top: 5px;
+}
+
+/* Кнопка отправки */
+.form-footer {
+    text-align: center;
+}
+
+.submit-btn {
+    background: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 12px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-bottom: 15px;
+}
+
+.submit-btn:hover {
+    background: var(--blue-dark);
+}
+
+.privacy-note {
+    font-size: 12px;
+    color: var(--gray-dark);
+    line-height: 1.4;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
 /* Футер */
 .footer {
     margin-top: 30px;
@@ -326,6 +522,27 @@ body {
         font-size: 15px;
         min-width: 60px;
     }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .contacts-info {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .contact-item {
+        text-align: center;
+    }
+    
+    .contacts-card,
+    .form-card {
+        padding: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -348,5 +565,10 @@ body {
     .discount-table td:first-child,
     .status-table td:first-child {
         padding-right: 10px;
+    }
+    
+    .submit-btn {
+        width: 100%;
+        padding: 12px;
     }
 }
