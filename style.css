@@ -601,4 +601,13 @@ strong,
     .footer {
         text-align: center;
     }
+    .header-image {
+    margin: 20px 0 30px 0;
+    text-align: left;
+}
+
+.header-image img {
+    max-width: 100%;
+    height: auto;
+}
 }
