@@ -3,161 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Система скидок для B2B и розничных покупателей</title>
+    <title>Система скидок</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <header class="header">
+        <header>
             <h1>Система скидок</h1>
-            <p class="subtitle">Специальные условия для розничных и оптовых покупателей</p>
         </header>
 
-        <main class="main-content">
-            <section class="section retail">
-                <div class="section-header">
-                    <h2>Условия для розничных покупателей и школ</h2>
-                    <div class="badge">Розница</div>
+        <main>
+            <section>
+                <h2>Розничные покупатели</h2>
+                <div class="block">
+                    <h3>Скидка от суммы заказа:</h3>
+                    <table>
+                        <tr>
+                            <td>От 10 000 ₽</td>
+                            <td><strong>10%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>От 25 000 ₽</td>
+                            <td><strong>20%</strong></td>
+                        </tr>
+                    </table>
                 </div>
                 
-                <div class="card">
-                    <h3>Скидка от суммы разового заказа</h3>
-                    <div class="table-container">
-                        <table class="price-table">
-                            <thead>
-                                <tr>
-                                    <th>Сумма заказа</th>
-                                    <th>Скидка</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>От 10 000 ₽</td>
-                                    <td><span class="discount-badge">10%</span></td>
-                                </tr>
-                                <tr>
-                                    <td>От 25 000 ₽</td>
-                                    <td><span class="discount-badge">20%</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div class="card highlight">
-                    <h3>Для спортивных школ (ДЮСШ, СШОР)</h3>
-                    <div class="features">
-                        <div class="feature">
-                            <span class="feature-icon">🎯</span>
-                            <div>
-                                <p class="feature-title">Фиксированная скидка 20%</p>
-                                <p class="feature-description">Действует на заказ любой суммы</p>
-                            </div>
-                        </div>
-                        <div class="note">
-                            <p>📝 Для активации скидки требуется заполнить анкету и подтвердить статус учебного заведения</p>
-                        </div>
-                    </div>
+                <div class="block note">
+                    <h3>Спортивные школы (ДЮСШ, СШОР):</h3>
+                    <p><strong>Фиксированная скидка 20%</strong> на любую сумму.</p>
+                    <p class="small">Требуется подтверждение статуса школы.</p>
                 </div>
             </section>
 
-            <section class="section wholesale">
-                <div class="section-header">
-                    <h2>Условия для оптовых покупателей и дилеров</h2>
-                    <div class="badge badge-blue">Опт</div>
+            <section>
+                <h2>Оптовые покупатели</h2>
+                
+                <div class="block">
+                    <h3>Скидка от суммы заказа:</h3>
+                    <table>
+                        <tr>
+                            <td>От 150 000 ₽</td>
+                            <td><strong>30%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>От 350 000 ₽</td>
+                            <td><strong>40%</strong></td>
+                        </tr>
+                        <tr>
+                            <td>От 600 000 ₽</td>
+                            <td><strong>50%</strong></td>
+                        </tr>
+                    </table>
                 </div>
 
-                <div class="card">
-                    <h3>Скидка от суммы разового заказа</h3>
-                    <div class="table-container">
-                        <table class="price-table">
-                            <thead>
-                                <tr>
-                                    <th>Сумма заказа</th>
-                                    <th>Скидка</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>От 150 000 ₽</td>
-                                    <td><span class="discount-badge discount-badge-blue">30%</span></td>
-                                </tr>
-                                <tr>
-                                    <td>От 350 000 ₽</td>
-                                    <td><span class="discount-badge discount-badge-blue">40%</span></td>
-                                </tr>
-                                <tr>
-                                    <td>От 600 000 ₽</td>
-                                    <td><span class="discount-badge discount-badge-blue">50%</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="block">
+                    <h3>Программа сотрудничества:</h3>
+                    <table class="status">
+                        <tr>
+                            <td><strong>Средний опт</strong></td>
+                            <td><strong>30%</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Крупный опт</strong></td>
+                            <td><strong>40%</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Дилер</strong></td>
+                            <td><strong>50%</strong></td>
+                        </tr>
+                    </table>
+                    <p class="small">Персональные условия обсуждаются отдельно.</p>
                 </div>
 
-                <div class="card info">
-                    <h3>Регулярные оптовые закупки</h3>
-                    <div class="callout">
-                        <p>💼 <strong>Персональные условия обсуждаются отдельно</strong></p>
-                        <p>Свяжитесь с нами для получения индивидуального предложения</p>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Действующие статусы и базовые скидки</h3>
-                    <div class="status-cards">
-                        <div class="status-card">
-                            <div class="status-header">
-                                <span class="status-icon">📦</span>
-                                <h4>Средний опт</h4>
-                            </div>
-                            <div class="status-discount">30%</div>
-                        </div>
-                        <div class="status-card">
-                            <div class="status-header">
-                                <span class="status-icon">🚚</span>
-                                <h4>Крупный опт</h4>
-                            </div>
-                            <div class="status-discount">40%</div>
-                        </div>
-                        <div class="status-card">
-                            <div class="status-header">
-                                <span class="status-icon">🤝</span>
-                                <h4>Дилер</h4>
-                            </div>
-                            <div class="status-discount">50%</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>Дополнительные условия для статусов</h3>
-                    <ul class="benefits-list">
-                        <li><span class="checkmark">✓</span> Закрепление персонального менеджера</li>
-                        <li><span class="checkmark">✓</span> Предоставление образцов продукции</li>
-                        <li><span class="checkmark">✓</span> Специальные условия на разработку уникального дизайна</li>
-                        <li><span class="checkmark">✓</span> Повышенная скидка на товары категории «Распродажа»</li>
+                <div class="block">
+                    <h3>Дополнительные условия:</h3>
+                    <ul>
+                        <li>Персональный менеджер</li>
+                        <li>Образцы продукции</li>
+                        <li>Разработка уникального дизайна</li>
+                        <li>Повышенная скидка на распродажу</li>
                     </ul>
                 </div>
             </section>
         </main>
 
-        <footer class="footer">
-            <p>© Система скидок • Обновлено: <span id="current-date"></span></p>
+        <footer>
+            <p>Актуально на <span id="date"></span></p>
         </footer>
     </div>
 
     <script>
-        // Добавляем текущую дату в футер
-        const currentDate = new Date().toLocaleDateString('ru-RU', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
-        });
-        document.getElementById('current-date').textContent = currentDate;
+        document.getElementById('date').textContent = 
+            new Date().toLocaleDateString('ru-RU');
     </script>
 </body>
 </html>
