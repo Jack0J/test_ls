@@ -10,94 +10,96 @@
     <div class="container">
         <header class="header">
             <h1>Система скидок</h1>
-            <p class="subtitle">Специальные условия для оптовых и розничных покупателей</p>
+            <p class="subtitle">Специальные условия для оптовых покупателей, дилеров, розничных покупателей и школ</p>
         </header>
 
         <div class="content-grid">
             <section class="section retail-section">
                 <div class="section-header">
-                    <h2>Розничные покупатели</h2>
+                    <h2>Условия для розничных покупателей и школ</h2>
                     <span class="section-tag">Розница</span>
                 </div>
 
                 <div class="card">
-                    <h3>Скидка от суммы заказа</h3>
+                    <h3>Скидки на объем единоразового заказа:</h3>
                     <table class="discount-table">
                         <tr>
-                            <td>От 10 000 ₽</td>
+                            <td>Скидка - 10% при заказе от 10,000 рублей.</td>
                             <td><strong class="discount retail">10%</strong></td>
                         </tr>
                         <tr>
-                            <td>От 25 000 ₽</td>
+                            <td>Скидка - 20% при заказе от 25,000 рублей.</td>
                             <td><strong class="discount retail">20%</strong></td>
                         </tr>
                     </table>
                 </div>
 
-                <div class="card special">
-                    <h3>Спортивные школы (ДЮСШ, СШОР)</h3>
-                    <p><strong>Постоянная скидка 20%</strong> на любую сумму</p>
-                    <p class="note">Требуется подтверждение статуса</p>
+                <div class="card school-card">
+                    <div class="school-header">
+                        <h3>Скидки для ДЮСШ, СШОР:</h3>
+                        <span class="school-label">Школы</span>
+                    </div>
+                    <div class="school-content">
+                        <p class="school-discount">Скидка - 20% от любой суммы.</p>
+                        <p class="school-note">Для предоставления скидки потребуется заполнить анкету.</p>
+                    </div>
                 </div>
             </section>
 
             <section class="section wholesale-section">
                 <div class="section-header">
-                    <h2>Оптовые покупатели</h2>
+                    <h2>Условия для оптовых закупок и дилеров</h2>
                     <span class="section-tag wholesale">Опт</span>
                 </div>
 
                 <div class="card">
-                    <h3>Скидка от суммы заказа</h3>
+                    <h3>Скидки на объем единоразового заказа:</h3>
                     <table class="discount-table">
                         <tr>
-                            <td>От 150 000 ₽</td>
+                            <td>Скидка - 30% при заказе от 150,000 рублей.</td>
                             <td><strong class="discount wholesale">30%</strong></td>
                         </tr>
                         <tr>
-                            <td>От 350 000 ₽</td>
+                            <td>Скидка - 40% при заказе от 350,000 рублей.</td>
                             <td><strong class="discount wholesale">40%</strong></td>
                         </tr>
                         <tr>
-                            <td>От 600 000 ₽</td>
+                            <td>Скидка - 50% при заказе от 600,000 рублей.</td>
                             <td><strong class="discount wholesale">50%</strong></td>
                         </tr>
                     </table>
                 </div>
 
                 <div class="card">
-                    <h3>Статусы сотрудничества</h3>
+                    <h3>Скидки для оптовых заказов и дилеров. Специальные условия:</h3>
                     <table class="status-table">
                         <tr>
-                            <td><strong>Средний опт</strong></td>
+                            <td><strong>Средний опт</strong><br><span class="status-subtitle">Скидка - 30%</span></td>
                             <td><strong class="discount">30%</strong></td>
                         </tr>
                         <tr>
-                            <td><strong>Крупный опт</strong></td>
+                            <td><strong>Крупный опт</strong><br><span class="status-subtitle">Скидка - 40%</span></td>
                             <td><strong class="discount">40%</strong></td>
                         </tr>
                         <tr>
-                            <td><strong>Дилер</strong></td>
+                            <td><strong>Дилер</strong><br><span class="status-subtitle">Скидка - 50%</span></td>
                             <td><strong class="discount">50%</strong></td>
                         </tr>
                     </table>
-                    <p class="note">Персональные условия обсуждаются отдельно</p>
-                </div>
-
-                <div class="card compact">
-                    <h3>Дополнительные условия</h3>
-                    <ul class="compact-list">
-                        <li>Персональный менеджер</li>
-                        <li>Образцы продукции</li>
-                        <li>Разработка дизайна</li>
-                        <li>Скидки на распродажу</li>
-                    </ul>
+                    <div class="conditions">
+                        <ul class="conditions-list">
+                            <li>Предоставление приоритетного обслуживания и закрепление персонального менеджера.</li>
+                            <li>Предоставление образцов продукции для демонстрации клиентам.</li>
+                            <li>Специальные условия на разработку уникального дизайна экипировки.</li>
+                            <li>Повышенная скидка для группы товаров "Распродажа".</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
         </div>
 
         <footer class="footer">
-            <p>Актуально на <span id="currentDate"></span></p>
+            <p>Система скидок актуальна на <span id="currentDate"></span></p>
         </footer>
     </div>
 
