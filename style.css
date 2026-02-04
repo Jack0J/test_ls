@@ -19,13 +19,34 @@
     --radius: 4px;
 }
 
+/* Шрифт DINpro через Google Fonts (Inter как замена) */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
     line-height: 1.5;
     color: var(--black);
     background: var(--white);
     padding: 20px;
     font-size: 14px;
+}
+
+/* Для заголовков используем более плотные начертания как в DINpro */
+h1, h2, h3, h4, h5, h6,
+.header h1,
+.section-header h2,
+.card h3,
+.contacts-card h3,
+.form-card h3 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+strong,
+.discount,
+.section-tag,
+.school-label,
+.submit-btn {
+    font-weight: 600;
+    letter-spacing: -0.01em;
 }
 
 .container {
@@ -34,27 +55,27 @@ body {
     background: var(--white);
 }
 
-/* Шапка */
+/* Шапка - выравнивание по левому краю */
 .header {
-    text-align: center;
-    margin-bottom: 30px;
+    text-align: left;
+    margin-bottom: 40px;
     padding-bottom: 20px;
     border-bottom: 2px solid var(--gray-medium);
 }
 
 .header h1 {
-    font-size: 26px;
-    font-weight: 600;
+    font-size: 32px;
+    font-weight: 700;
     margin-bottom: 8px;
     color: var(--black);
+    letter-spacing: -0.03em;
 }
 
 .subtitle {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--gray-dark);
     font-weight: 400;
     max-width: 800px;
-    margin: 0 auto;
 }
 
 /* Сетка контента */
@@ -72,7 +93,7 @@ body {
     }
 }
 
-/* Секции */
+/* Секции - выравнивание по левому краю */
 .section {
     display: flex;
     flex-direction: column;
@@ -89,7 +110,7 @@ body {
 }
 
 .section-header h2 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     color: var(--black);
     flex: 1;
@@ -99,7 +120,7 @@ body {
 .section-tag {
     font-size: 12px;
     font-weight: 600;
-    padding: 5px 12px;
+    padding: 6px 12px;
     background: var(--gray-light);
     color: var(--black);
     border: var(--border);
@@ -113,7 +134,7 @@ body {
     border: none;
 }
 
-/* Карточки */
+/* Карточки - выравнивание по левому краю */
 .card {
     background: var(--white);
     border: var(--border);
@@ -276,7 +297,7 @@ body {
     font-weight: bold;
 }
 
-/* Контакты */
+/* Контакты - выравнивание по левому краю */
 .contacts-section {
     margin: 30px 0;
 }
@@ -285,7 +306,7 @@ body {
     background: var(--gray-light);
     border: var(--border);
     padding: 25px;
-    text-align: center;
+    text-align: left;
 }
 
 .contacts-card h3 {
@@ -297,7 +318,6 @@ body {
 
 .contacts-info {
     display: flex;
-    justify-content: center;
     gap: 40px;
     flex-wrap: wrap;
 }
@@ -324,7 +344,7 @@ body {
     text-decoration: underline;
 }
 
-/* Форма обратной связи */
+/* Форма обратной связи - выравнивание по левому краю */
 .form-section {
     margin: 30px 0;
 }
@@ -334,6 +354,7 @@ body {
     border: var(--border);
     padding: 25px;
     box-shadow: var(--shadow);
+    text-align: left;
 }
 
 .form-card h3 {
@@ -442,7 +463,7 @@ body {
 
 /* Кнопка отправки */
 .form-footer {
-    text-align: center;
+    text-align: left;
 }
 
 .submit-btn {
@@ -467,15 +488,14 @@ body {
     color: var(--gray-dark);
     line-height: 1.4;
     max-width: 400px;
-    margin: 0 auto;
 }
 
-/* Футер */
+/* Футер - выравнивание по левому краю */
 .footer {
     margin-top: 30px;
     padding-top: 20px;
     border-top: 2px solid var(--gray-medium);
-    text-align: center;
+    text-align: left;
     font-size: 13px;
     color: var(--gray-dark);
 }
@@ -488,15 +508,15 @@ body {
     }
     
     .header h1 {
-        font-size: 22px;
+        font-size: 26px;
     }
     
     .subtitle {
-        font-size: 14px;
+        font-size: 15px;
     }
     
     .section-header h2 {
-        font-size: 16px;
+        font-size: 18px;
     }
     
     .content-grid {
@@ -531,17 +551,19 @@ body {
     .contacts-info {
         flex-direction: column;
         gap: 20px;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .contact-item {
-        text-align: center;
     }
     
     .contacts-card,
     .form-card {
         padding: 20px;
+    }
+    
+    .form-footer {
+        text-align: center;
+    }
+    
+    .footer {
+        text-align: center;
     }
 }
 
@@ -570,5 +592,13 @@ body {
     .submit-btn {
         width: 100%;
         padding: 12px;
+    }
+    
+    .header {
+        text-align: center;
+    }
+    
+    .footer {
+        text-align: center;
     }
 }
