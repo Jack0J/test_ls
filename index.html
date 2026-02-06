@@ -18,19 +18,19 @@
 
         <div class="content-grid balanced">
             <section class="section retail-section">
-                <div class="card">
+                <div class="card black-card">
                     <div class="section-header">
                         <h2>Скидки на объем единоразового заказа</h2>
-                        <span class="section-tag">Розница</span>
+                        <span class="section-tag black">Розница</span>
                     </div>
                     <table class="discount-table">
                         <tr>
                             <td>От 10,000 рублей</td>
-                            <td><strong class="discount retail">10%</strong></td>
+                            <td><strong class="discount black">10%</strong></td>
                         </tr>
                         <tr>
                             <td>От 25,000 рублей</td>
-                            <td><strong class="discount retail">20%</strong></td>
+                            <td><strong class="discount black">20%</strong></td>
                         </tr>
                     </table>
                     <p class="table-note">Скидка применяется к итоговой сумме заказа</p>
@@ -38,15 +38,15 @@
             </section>
 
             <section class="section wholesale-section">
-                <div class="card partnership-card">
+                <div class="card gray-card">
                     <div class="section-header">
                         <h2>Оптовые закупки и дилеры</h2>
-                        <span class="section-tag wholesale">Сотрудничество</span>
+                        <span class="section-tag gray">Сотрудничество</span>
                     </div>
                     <div class="partnership-content">
                         <p class="partnership-lead"><strong>Индивидуальные условия для оптовых закупок</strong></p>
                         <p>Каждое сотрудничество мы рассматриваем персонально, чтобы предложить максимально выгодные условия для вашего бизнеса.</p>
-                        <p class="partnership-cta">Воспользуйтесь формой обратной связи для обсуждения деталей.</p>
+                        <p class="partnership-cta">Воспользуйтесь формой обратной связи для обсуждения деталей или свяжитесь с нами по контактам ниже.</p>
                     </div>
                 </div>
             </section>
@@ -61,11 +61,11 @@
                 </div>
             </div>
 
-            <div class="modern-school-card">
+            <div class="modern-school-card blue-card">
                 <div class="school-card-header">
                     <div class="school-badge">
-                        <span class="badge-icon">🏃‍♂️</span>
-                        <span class="badge-text">ДЮСШ / СШОР</span>
+                        <img src="https://images.icon-icons.com/67/PNG/512/running_sport_13282.png" alt="Иконка бегущего человека" class="running-icon">
+                        <span class="badge-text">Скидки для ДЮСШ / СШОР</span>
                     </div>
                     <div class="school-discount-main">
                         <span class="discount-large">30%</span>
@@ -76,7 +76,12 @@
                 <div class="school-card-content">
                     <div class="school-mission">
                         <h3>Наша миссия — развитие спорта</h3>
-                        <p>Скидка предоставляется в рамках нашей миссии по развитию детско-юношеского спорта в России. Мы разделяем концепцию развития детско-юношеского спорта в Российской Федерации до 2030 года и считаем важным поддержку будущего поколения спортсменов.</p>
+                        <p>Скидка предоставляется в рамках нашей миссии по развитию детско-юношеского спорта в России. Мы разделяем <a href="http://static.government.ru/media/files/BzNG3VRui0oPR1XemJKbuIZ6UeXTwTD2.pdf" target="_blank" class="concept-link">концепцию развития детско-юношеского спорта в Российской Федерации до 2030 года</a> и считаем важным поддержку будущего поколения спортсменов.</p>
+                        
+                        <div class="mission-details">
+                            <p>Мы активно сотрудничаем с множеством детских спортивных организаций, включая Академию футбола (АМФР) и Училища олимпийского резерва (УОР). Являемся официальным партнером в различных спортивных проектах и соревнованиях.</p>
+                            <p>Поддерживаем федеральные программы, такие как "Футбол в школу", и участвуем в организации детско-юношеских турниров по всей стране. Наша цель — сделать качественную спортивную экипировку доступной для каждого юного спортсмена.</p>
+                        </div>
                     </div>
 
                     <div class="school-process">
@@ -109,14 +114,14 @@
                             <h5>Документы для скачивания</h5>
                             <div class="download-buttons">
                                 <a href="#" class="download-btn modern">
-                                    <span class="btn-icon">📄</span>
+                                    <span class="btn-icon">📋</span>
                                     <span class="btn-text">
                                         <span class="btn-title">Шаблон анкеты</span>
                                         <span class="btn-subtitle">DOCX, 45KB</span>
                                     </span>
                                 </a>
                                 <a href="#" class="download-btn modern">
-                                    <span class="btn-icon">📝</span>
+                                    <span class="btn-icon">📄</span>
                                     <span class="btn-text">
                                         <span class="btn-title">Пример заполнения</span>
                                         <span class="btn-subtitle">PDF, 120KB</span>
@@ -149,35 +154,40 @@
             <div class="form-card">
                 <h3>Задать вопрос или уточнить детали</h3>
                 <form class="contact-form" id="contactForm">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="name">Имя и фамилия *</label>
-                            <input type="text" id="name" name="name" required>
+                    <div class="form-grid-improved">
+                        <div class="form-column">
+                            <div class="form-group">
+                                <label for="name">Имя и фамилия *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Контактный номер *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Электронная почта *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="file" class="file-label-improved">
+                                    <span class="file-icon-improved">📎</span>
+                                    <span class="file-text-improved">Прикрепить файл</span>
+                                    <input type="file" id="file" name="file" class="file-input">
+                                </label>
+                                <span class="file-hint">Максимальный размер файла: 10MB</span>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="phone">Контактный номер *</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Электронная почта *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Сообщение</label>
-                            <textarea id="message" name="message" rows="4"></textarea>
-                        </div>
-                        <div class="form-group full-width">
-                            <label for="file" class="file-label">
-                                <span class="file-icon">📎</span>
-                                Прикрепить файл
-                                <input type="file" id="file" name="file" class="file-input">
-                            </label>
-                            <span class="file-hint">Максимальный размер файла: 10MB</span>
+                        
+                        <div class="form-column">
+                            <div class="form-group message-group">
+                                <label for="message">Сообщение</label>
+                                <textarea id="message" name="message" rows="8"></textarea>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="form-footer">
-                        <button type="submit" class="submit-btn">Отправить</button>
+                    <div class="form-footer-improved">
+                        <button type="submit" class="submit-btn-improved">Отправить</button>
                         <p class="privacy-note">
                             Нажимая кнопку «Отправить» на данной странице, вы соглашаетесь с политикой конфиденциальности.
                         </p>
@@ -211,14 +221,9 @@
         // Показать имя выбранного файла
         document.getElementById('file').addEventListener('change', function(e) {
             const fileName = this.files[0] ? this.files[0].name : 'Файл не выбран';
-            const label = this.previousElementSibling;
-            if (label && label.classList.contains('file-label')) {
-                const textSpan = label.querySelector('.file-text') || document.createElement('span');
-                textSpan.className = 'file-text';
-                textSpan.textContent = `: ${fileName}`;
-                if (!label.querySelector('.file-text')) {
-                    label.appendChild(textSpan);
-                }
+            const label = document.querySelector('.file-text-improved');
+            if (label) {
+                label.textContent = fileName;
             }
         });
 
