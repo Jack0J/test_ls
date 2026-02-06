@@ -1,602 +1,85 @@
-/* Базовые стили - DIN Pro через Inter как ближайший аналог */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --black: #000000;
-    --white: #ffffff;
-    --gray-light: #f5f5f5;
-    --gray-medium: #e0e0e0;
-    --gray-dark: #757575;
-    --gray-card: #f8f9fa;
-    --blue: #0066cc;
-    --blue-dark: #004c99;
-    --blue-light: #e6f2ff;
-    --red: #ff0000;
-    --border: 1px solid #dee2e6;
-    --shadow: 0 2px 8px rgba(0,0,0,0.08);
-    --shadow-strong: 0 4px 12px rgba(0,0,0,0.12);
-    --radius: 4px;
-}
-
-/* DIN Pro стиль через Inter */
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-    line-height: 1.5;
-    color: var(--black);
+/* Обновляем карточку розницы - белый фон, черная обводка */
+.white-border-card {
     background: var(--white);
-    padding: 20px;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-    letter-spacing: -0.02em;
-}
-
-strong {
-    font-weight: 600;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    background: var(--white);
-}
-
-/* Шапка */
-.header {
-    text-align: left;
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid var(--black);
-}
-
-.header h1 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    color: var(--black);
-    letter-spacing: -0.03em;
-}
-
-.subtitle {
-    font-size: 16px;
-    color: var(--gray-dark);
-    font-weight: 400;
-    max-width: 600px;
-}
-
-/* Балансированная сетка контента */
-.content-grid.balanced {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-@media (max-width: 900px) {
-    .content-grid.balanced {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-}
-
-/* Секции и карточки */
-.card {
-    background: var(--white);
-    border: var(--border);
+    border: 2px solid var(--black);
     padding: 30px;
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-/* Карточка черная (розница) */
-.black-card {
-    background: var(--black);
-    color: var(--white);
-    border: none;
-}
-
-.black-card .section-header h2 {
-    color: var(--white);
-}
-
-.black-card .section-header {
-    border-bottom: 2px solid var(--white);
-}
-
-/* Карточка серая (опт) */
-.gray-card {
-    background: var(--gray-card);
-    border: 1px solid var(--gray-medium);
-}
-
-.gray-card .section-header {
-    border-bottom: 2px solid var(--gray-dark);
-}
-
-/* Карточка синяя (школа) */
-.blue-card {
-    background: var(--white);
-    border: 2px solid var(--blue);
-    box-shadow: var(--shadow-strong);
-}
-
-.section-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-}
-
-.section-header h2 {
-    font-size: 20px;
-    font-weight: 600;
+.white-border-card .section-header h2 {
     color: var(--black);
-    flex: 1;
-    margin-right: 15px;
 }
 
-.section-tag {
-    font-size: 11px;
-    font-weight: 600;
-    padding: 6px 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+.white-border-card .section-header {
+    border-bottom: 2px solid var(--black);
 }
 
-.section-tag.black {
+.section-tag.black-border {
     background: var(--white);
     color: var(--black);
-    border: 1px solid var(--white);
-}
-
-.section-tag.gray {
-    background: var(--gray-dark);
-    color: var(--white);
-    border: none;
-}
-
-/* Таблицы скидок */
-.discount-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    flex-grow: 1;
-}
-
-.discount-table tr {
-    border-bottom: 1px solid var(--gray-medium);
-}
-
-.discount-table tr:last-child {
-    border-bottom: none;
-}
-
-.discount-table td {
-    padding: 15px 0;
-    vertical-align: middle;
-    font-size: 15px;
-    line-height: 1.5;
-}
-
-.discount-table td:first-child {
-    padding-right: 15px;
-}
-
-.black-card .discount-table td:first-child {
-    color: var(--white);
-}
-
-.table-note {
-    font-size: 13px;
-    color: var(--gray-dark);
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid var(--gray-medium);
-}
-
-.black-card .table-note {
-    color: var(--gray-medium);
-    border-top: 1px solid var(--gray-medium);
-}
-
-/* Скидки */
-.discount {
-    display: inline-block;
-    padding: 8px 20px;
+    border: 2px solid var(--black);
     font-weight: 600;
-    font-size: 16px;
-    min-width: 80px;
-    text-align: center;
 }
 
-.discount.black {
+.discount.black-border {
     background: var(--white);
     color: var(--black);
-    border: 2px solid var(--white);
+    border: 2px solid var(--black);
 }
 
-/* Блок партнерства */
-.partnership-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-}
-
-.partnership-lead {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: var(--black);
-    line-height: 1.4;
-}
-
-.partnership-content p {
-    margin-bottom: 12px;
-    line-height: 1.6;
-    color: var(--gray-dark);
-}
-
-.partnership-cta {
-    font-weight: 600;
-    color: var(--blue);
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid var(--gray-medium);
-}
-
-/* Секция спортивных школ */
-.sports-school-section {
-    margin: 50px 0;
-}
-
-/* Баннер */
-.school-banner {
-    position: relative;
-    margin-bottom: 30px;
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-strong);
-    height: 300px;
-}
-
-.school-banner img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.banner-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-    color: var(--white);
-    padding: 40px;
-}
-
-.banner-tag {
-    display: inline-block;
-    background: var(--blue);
-    color: var(--white);
-    font-size: 12px;
-    font-weight: 600;
-    padding: 6px 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
-
-.banner-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--white);
-    line-height: 1.2;
-}
-
-/* Модерная карточка школы синяя */
-.modern-school-card {
-    padding: 40px;
-}
-
-.school-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-    padding-bottom: 25px;
-    border-bottom: 3px solid var(--blue);
-}
-
-.school-badge {
+/* Логотип под блоком миссии */
+.logo-signature {
     display: flex;
     align-items: center;
     gap: 15px;
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(0, 102, 204, 0.2);
 }
 
-.running-icon {
-    width: 40px;
+.company-logo {
     height: 40px;
-    object-fit: contain;
+    width: auto;
 }
 
-.badge-text {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--black);
+.logo-text {
+    font-size: 14px;
+    color: var(--blue);
+    font-weight: 500;
+    font-style: italic;
 }
 
-.school-discount-main {
+/* Обновляем колонку сообщения в форме */
+.message-column {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
 }
 
-.discount-large {
-    font-size: 64px;
-    font-weight: 700;
-    color: var(--blue);
-    line-height: 1;
+.message-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.discount-label {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--gray-dark);
-    margin-top: 5px;
-}
-
-.school-card-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-@media (max-width: 768px) {
-    .school-card-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
-
-.school-mission h3 {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: var(--black);
-}
-
-.school-mission p {
-    font-size: 15px;
-    line-height: 1.7;
-    color: var(--gray-dark);
-    margin-bottom: 15px;
-}
-
-.concept-link {
-    color: var(--blue);
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.concept-link:hover {
-    text-decoration: underline;
-}
-
-.mission-details {
-    background: var(--blue-light);
-    padding: 20px;
-    border-radius: var(--radius);
-    margin-top: 20px;
-    border-left: 4px solid var(--blue);
-}
-
-.mission-details p {
-    font-size: 14px;
+.message-group label {
     margin-bottom: 10px;
 }
 
-.mission-details p:last-child {
-    margin-bottom: 0;
+.message-group textarea {
+    flex: 1;
+    min-height: 200px;
+    resize: vertical;
 }
 
-.school-process h4 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 25px;
-    color: var(--black);
-}
-
-.process-steps {
-    margin-bottom: 35px;
-}
-
-.step {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    margin-bottom: 25px;
-    padding-bottom: 25px;
-    border-bottom: 1px solid var(--gray-medium);
-}
-
-.step:last-child {
-    border-bottom: none;
-}
-
-.step-number {
-    width: 40px;
-    height: 40px;
-    background: var(--blue);
-    color: var(--white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: 600;
-    flex-shrink: 0;
-}
-
-.step-content h5 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: var(--black);
-}
-
-.step-content p {
-    font-size: 14px;
-    color: var(--gray-dark);
-    line-height: 1.5;
-}
-
-.download-section h5 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: var(--black);
-}
-
-.download-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.download-btn.modern {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 20px;
-    background: var(--white);
-    color: var(--black);
-    text-decoration: none;
-    border: 1px solid var(--gray-medium);
-    border-radius: var(--radius);
-    transition: all 0.2s;
-}
-
-.download-btn.modern:hover {
-    border-color: var(--blue);
-    background: var(--blue-light);
-}
-
-.btn-icon {
-    font-size: 24px;
-}
-
-.btn-text {
-    display: flex;
-    flex-direction: column;
-}
-
-.btn-title {
-    font-size: 15px;
-    font-weight: 500;
-    margin-bottom: 4px;
-}
-
-.btn-subtitle {
-    font-size: 13px;
-    color: var(--gray-dark);
-}
-
-/* Контакты */
-.contacts-section {
-    margin: 40px 0;
-}
-
-.contacts-card {
-    background: var(--white);
-    border: var(--border);
-    padding: 30px;
-    text-align: left;
-}
-
-.contacts-card h3 {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 25px;
-    color: var(--black);
-    padding-bottom: 15px;
-    border-bottom: 2px solid var(--black);
-}
-
-.contacts-info {
-    display: flex;
-    gap: 60px;
-    flex-wrap: wrap;
-}
-
-.contact-item {
-    text-align: left;
-}
-
-.contact-label {
-    display: block;
-    font-size: 14px;
-    color: var(--gray-dark);
-    margin-bottom: 8px;
-    font-weight: 500;
-}
-
-.contact-value {
-    font-size: 18px;
-    color: var(--blue);
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.contact-value:hover {
-    color: var(--blue-dark);
-    text-decoration: underline;
-}
-
-/* Улучшенная форма обратной связи */
-.form-section {
-    margin: 40px 0;
-}
-
-.form-card {
-    background: var(--white);
-    border: var(--border);
-    padding: 30px;
-    text-align: left;
-}
-
-.form-card h3 {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 30px;
-    color: var(--black);
-    padding-bottom: 15px;
-    border-bottom: 2px solid var(--black);
-}
-
-.contact-form {
-    margin-top: 20px;
-}
-
-/* Новая улучшенная сетка формы */
+/* Форма улучшена для выравнивания высоты */
 .form-grid-improved {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     margin-bottom: 30px;
+    align-items: stretch;
 }
 
 @media (max-width: 768px) {
@@ -612,101 +95,26 @@ strong {
     gap: 20px;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 10px;
-    color: var(--black);
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 12px 15px;
-    border: 1px solid var(--gray-medium);
-    border-radius: var(--radius);
-    font-size: 15px;
-    font-family: inherit;
-    color: var(--black);
-    background: var(--white);
-    transition: all 0.2s;
-    width: 100%;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--blue);
-    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
-}
-
-/* Поле сообщения */
-.message-group {
-    height: 100%;
-}
-
-.message-group textarea {
-    height: calc(100% - 30px);
-    resize: none;
-}
-
-/* Улучшенное поле загрузки файла */
-.file-label-improved {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 15px;
-    border: 1px solid var(--gray-medium);
-    border-radius: var(--radius);
-    background: var(--white);
-    cursor: pointer;
-    font-size: 15px;
-    color: var(--black);
-    transition: all 0.2s;
-}
-
-.file-label-improved:hover {
-    border-color: var(--blue);
-    background: var(--gray-light);
-}
-
-.file-icon-improved {
-    font-size: 18px;
-}
-
-.file-text-improved {
-    flex-grow: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.file-input {
-    display: none;
-}
-
-.file-hint {
-    display: block;
-    font-size: 13px;
-    color: var(--gray-dark);
-    margin-top: 8px;
-    font-style: italic;
-}
-
-/* Улучшенная кнопка отправки */
+/* Улучшаем кнопку отправки */
 .form-footer-improved {
-    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .form-footer-improved {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
 .submit-btn-improved {
     background: var(--black);
     color: var(--white);
     border: 2px solid var(--black);
-    padding: 15px 60px;
+    padding: 16px 80px;
     font-size: 16px;
     font-weight: 600;
     border-radius: var(--radius);
@@ -714,6 +122,8 @@ strong {
     transition: all 0.2s;
     font-family: 'Inter', sans-serif;
     letter-spacing: -0.01em;
+    min-width: 200px;
+    white-space: nowrap;
 }
 
 .submit-btn-improved:hover {
@@ -728,112 +138,40 @@ strong {
     color: var(--gray-dark);
     line-height: 1.5;
     max-width: 400px;
-    margin-top: 15px;
+    margin-top: 0;
+    padding-top: 5px;
 }
 
-/* Футер */
-.footer {
-    margin-top: 40px;
-    padding-top: 25px;
-    border-top: 2px solid var(--black);
-    text-align: left;
-    font-size: 14px;
-    color: var(--gray-dark);
+/* Улучшаем поле файла */
+.file-label-improved {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border: 1px solid var(--gray-medium);
+    border-radius: var(--radius);
+    background: var(--white);
+    cursor: pointer;
+    font-size: 15px;
+    color: var(--black);
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.file-label-improved:hover {
+    border-color: var(--blue);
+    background: var(--gray-light);
 }
 
 /* Адаптивность */
 @media (max-width: 768px) {
-    body {
-        padding: 15px;
-        font-size: 13px;
-    }
-    
-    .header h1 {
-        font-size: 28px;
-    }
-    
-    .subtitle {
-        font-size: 15px;
-    }
-    
-    .section-header h2 {
-        font-size: 18px;
-    }
-    
-    .content-grid.balanced {
-        gap: 20px;
-    }
-    
-    .card {
-        padding: 25px;
-    }
-    
-    .school-banner {
-        height: 200px;
-    }
-    
-    .banner-overlay {
-        padding: 20px;
-    }
-    
-    .banner-title {
-        font-size: 24px;
-    }
-    
-    .modern-school-card {
-        padding: 25px;
-    }
-    
-    .school-card-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-    }
-    
-    .school-discount-main {
-        align-items: flex-start;
-    }
-    
-    .discount-large {
-        font-size: 48px;
-    }
-    
-    .contacts-info {
-        flex-direction: column;
-        gap: 25px;
-    }
-    
-    .contacts-card,
-    .form-card {
-        padding: 25px;
-    }
-    
-    .footer {
-        text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-    
-    .section-tag {
-        align-self: flex-start;
-    }
-    
     .submit-btn-improved {
         width: 100%;
-        padding: 15px;
+        padding: 16px;
+        min-width: auto;
     }
     
-    .banner-title {
-        font-size: 20px;
-    }
-    
-    .form-grid-improved {
-        gap: 20px;
+    .form-footer-improved {
+        align-items: stretch;
     }
 }
