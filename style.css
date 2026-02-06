@@ -400,7 +400,7 @@ strong {
 }
 
 .mission-details {
-    background: var(--blue-light);
+    background: var(--gray-light);
     padding: 20px;
     border-radius: var(--radius);
     margin-top: 20px;
