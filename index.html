@@ -122,14 +122,14 @@
                                     <span class="btn-icon">📋</span>
                                     <span class="btn-text">
                                         <span class="btn-title">Шаблон анкеты</span>
-                                        <span class="btn-subtitle">DOCX, 45KB</span>
+                                        <!-- Размер убран -->
                                     </span>
                                 </a>
                                 <a href="#" class="download-btn modern" id="exampleLink">
                                     <span class="btn-icon">📄</span>
                                     <span class="btn-text">
                                         <span class="btn-title">Пример заполнения</span>
-                                        <span class="btn-subtitle">PDF, 120KB</span>
+                                        <!-- Размер убран -->
                                     </span>
                                 </a>
                             </div>
@@ -206,17 +206,17 @@
         </footer>
     </div>
 
-    <!-- Модальное окно -->
+    <!-- Модальное окно (без затемнения, черный заголовок) -->
     <div class="modal-overlay" id="successModal" style="display: none;">
         <div class="modal-content">
-            <div class="modal-header">
-                <span class="modal-title">Сообщение</span>
-                <button class="modal-close" id="modalCloseBtn" aria-label="Закрыть">✕</button>
+            <div class="modal-header black-header">
+                <span class="modal-title">Успешно</span>
+                <button class="modal-close white-close" id="modalCloseBtn" aria-label="Закрыть">✕</button>
             </div>
             <div class="modal-body">
                 <p>Ваша заявка принята в обработку. Мы свяжемся с вами в ближайшее время.</p>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer no-border">
                 <button class="modal-btn" id="modalConfirmBtn">Закрыть</button>
             </div>
         </div>
@@ -245,12 +245,18 @@
                 if (existingCross) existingCross.remove();
             }
 
+            // --- Вспомогательная функция обрезки имени файла до 15 символов ---
+            function truncateFileName(name, maxLength = 15) {
+                if (name.length <= maxLength) return name;
+                return name.substr(0, maxLength) + '…';
+            }
+
             // --- Обработка выбора файла ---
             fileInput.addEventListener('change', function(e) {
                 const file = e.target.files[0];
                 if (file) {
-                    // Формируем строку с именем и размером
-                    const fileName = file.name;
+                    // Обрезаем имя до 15 символов
+                    const fileName = truncateFileName(file.name, 15);
                     const fileSize = (file.size / 1024).toFixed(1); // в KB
                     const fileInfo = `${fileName} (${fileSize} KB)`;
                     
@@ -291,11 +297,13 @@
 
             modalCloseBtn.addEventListener('click', hideModal);
             modalConfirmBtn.addEventListener('click', hideModal);
-            window.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    hideModal();
-                }
-            });
+            // Убрали закрытие по клику на overlay (так как overlay теперь прозрачный и не должен перехватывать клики)
+            // Но если хотим оставить возможность закрытия при клике на фон, можно добавить:
+            // window.addEventListener('click', function(e) {
+            //     if (e.target === modal) {
+            //         hideModal();
+            //     }
+            // });
 
             // --- Обработка отправки формы ---
             form.addEventListener('submit', function(e) {

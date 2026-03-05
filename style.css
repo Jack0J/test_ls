@@ -15,7 +15,6 @@
     --blue: #0066cc;
     --blue-dark: #004c99;
     --blue-light: #e6f2ff;
-    --red: #ff0000;
     --border: 1px solid #dee2e6;
     --shadow: 0 2px 8px rgba(0,0,0,0.08);
     --shadow-strong: 0 4px 12px rgba(0,0,0,0.12);
@@ -535,9 +534,9 @@ strong {
     margin-bottom: 4px;
 }
 
+/* Убираем подпись с размером файла - она удалена из HTML, но на всякий случай скроем, если осталась */
 .btn-subtitle {
-    font-size: 13px;
-    color: var(--gray-dark);
+    display: none;
 }
 
 /* Контакты */
@@ -809,54 +808,60 @@ strong {
     text-decoration: underline;
 }
 
-/* Модальное окно */
+/* Модальное окно (обновленное) */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    /* Убираем затемнение: фон прозрачный */
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    pointer-events: none; /* чтобы overlay не перехватывал клики */
 }
 
 .modal-content {
     background: var(--white);
-    border: 2px solid var(--black);
+    /* Убираем обводку */
+    border: none;
     max-width: 450px;
     width: 90%;
     box-shadow: var(--shadow-strong);
+    pointer-events: auto; /* само окно кликабельно */
 }
 
-.modal-header {
+/* Черный заголовок */
+.black-header {
+    background: var(--black);
+    color: var(--white);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    border-bottom: 2px solid var(--black);
 }
 
 .modal-title {
     font-size: 18px;
     font-weight: 600;
-    color: var(--black);
+    color: var(--white);
 }
 
-.modal-close {
+.white-close {
     background: none;
     border: none;
     font-size: 20px;
     cursor: pointer;
-    color: var(--gray-dark);
+    color: var(--white);
     padding: 0 5px;
-    transition: color 0.2s;
+    transition: opacity 0.2s;
 }
 
-.modal-close:hover {
-    color: var(--black);
+.white-close:hover {
+    opacity: 0.8;
 }
 
 .modal-body {
@@ -870,10 +875,11 @@ strong {
     color: var(--black);
 }
 
-.modal-footer {
+/* Убираем верхнюю границу у футера */
+.modal-footer.no-border {
     padding: 20px;
-    border-top: 1px solid var(--gray-medium);
     text-align: center;
+    border-top: none; /* убираем серый разделитель */
 }
 
 .modal-btn {
