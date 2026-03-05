@@ -84,7 +84,7 @@
                             
                             <div class="logo-signature">
                                 <img src="https://2k-shop.ru/local/templates/2k-shop/img/svg/logo.svg" alt="2K Shop Logo" class="company-logo">
-                                <span class="logo-text">2K Shop — официальный партнер</span>
+                                <!-- Текст удален по требованию -->
                             </div>
                         </div>
                     </div>
@@ -122,14 +122,12 @@
                                     <span class="btn-icon">📋</span>
                                     <span class="btn-text">
                                         <span class="btn-title">Шаблон анкеты</span>
-                                        <!-- Размер убран -->
                                     </span>
                                 </a>
                                 <a href="#" class="download-btn modern" id="exampleLink">
                                     <span class="btn-icon">📄</span>
                                     <span class="btn-text">
                                         <span class="btn-title">Пример заполнения</span>
-                                        <!-- Размер убран -->
                                     </span>
                                 </a>
                             </div>
@@ -297,13 +295,6 @@
 
             modalCloseBtn.addEventListener('click', hideModal);
             modalConfirmBtn.addEventListener('click', hideModal);
-            // Убрали закрытие по клику на overlay (так как overlay теперь прозрачный и не должен перехватывать клики)
-            // Но если хотим оставить возможность закрытия при клике на фон, можно добавить:
-            // window.addEventListener('click', function(e) {
-            //     if (e.target === modal) {
-            //         hideModal();
-            //     }
-            // });
 
             // --- Обработка отправки формы ---
             form.addEventListener('submit', function(e) {

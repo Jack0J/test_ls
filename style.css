@@ -415,11 +415,10 @@ strong {
     margin-bottom: 0;
 }
 
-/* Логотип под блоком миссии */
+/* Логотип под блоком миссии (без текста) */
 .logo-signature {
     display: flex;
     align-items: center;
-    gap: 15px;
     margin-top: 25px;
     padding-top: 25px;
     border-top: 1px solid rgba(0, 102, 204, 0.2);
@@ -430,12 +429,7 @@ strong {
     width: auto;
 }
 
-.logo-text {
-    font-size: 14px;
-    color: var(--blue);
-    font-weight: 500;
-    font-style: italic;
-}
+/* Класс .logo-text больше не используется */
 
 .school-process h4 {
     font-size: 18px;
@@ -534,7 +528,7 @@ strong {
     margin-bottom: 4px;
 }
 
-/* Убираем подпись с размером файла - она удалена из HTML, но на всякий случай скроем, если осталась */
+/* Убираем подпись с размером файла - она удалена из HTML */
 .btn-subtitle {
     display: none;
 }
@@ -808,39 +802,38 @@ strong {
     text-decoration: underline;
 }
 
-/* Модальное окно (обновленное) */
+/* Модальное окно (обновленное с центрированием заголовка) */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Убираем затемнение: фон прозрачный */
     background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    pointer-events: none; /* чтобы overlay не перехватывал клики */
+    pointer-events: none;
 }
 
 .modal-content {
     background: var(--white);
-    /* Убираем обводку */
     border: none;
     max-width: 450px;
     width: 90%;
     box-shadow: var(--shadow-strong);
-    pointer-events: auto; /* само окно кликабельно */
+    pointer-events: auto;
 }
 
-/* Черный заголовок */
-.black-header {
+/* Черный заголовок с центрированием */
+.modal-header.black-header {
     background: var(--black);
     color: var(--white);
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center; /* центрируем содержимое по горизонтали */
+    position: relative;
     padding: 20px;
 }
 
@@ -848,9 +841,11 @@ strong {
     font-size: 18px;
     font-weight: 600;
     color: var(--white);
+    margin: 0 auto; /* гарантирует центр */
+    text-align: center;
 }
 
-.white-close {
+.modal-close.white-close {
     background: none;
     border: none;
     font-size: 20px;
@@ -858,9 +853,13 @@ strong {
     color: var(--white);
     padding: 0 5px;
     transition: opacity 0.2s;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.white-close:hover {
+.modal-close.white-close:hover {
     opacity: 0.8;
 }
 
@@ -879,7 +878,7 @@ strong {
 .modal-footer.no-border {
     padding: 20px;
     text-align: center;
-    border-top: none; /* убираем серый разделитель */
+    border-top: none;
 }
 
 .modal-btn {
