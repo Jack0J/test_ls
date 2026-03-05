@@ -400,7 +400,7 @@ strong {
 }
 
 .mission-details {
-    background: var(--gray-light);
+    background: #f5f5f5; /* светло-серый */
     padding: 20px;
     border-radius: var(--radius);
     margin-top: 20px;
@@ -427,7 +427,7 @@ strong {
 }
 
 .company-logo {
-    height: 28px;
+    height: 28px; /* 40px - 30% = 28px - ЗАФИКСИРОВАННОЕ ИЗМЕНЕНИЕ */
     width: auto;
 }
 
@@ -706,6 +706,7 @@ strong {
     color: var(--black);
     transition: all 0.2s;
     width: 100%;
+    position: relative;
 }
 
 .file-label-improved:hover {
@@ -715,6 +716,7 @@ strong {
 
 .file-icon-improved {
     font-size: 18px;
+    flex-shrink: 0;
 }
 
 .file-text-improved {
@@ -734,6 +736,21 @@ strong {
     color: var(--gray-dark);
     margin-top: 8px;
     font-style: italic;
+}
+
+/* Крестик для открепления файла */
+.file-remove {
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--gray-dark);
+    padding: 0 5px;
+    transition: color 0.2s;
+    flex-shrink: 0;
+}
+
+.file-remove:hover {
+    color: var(--black);
+    font-weight: bold;
 }
 
 /* Улучшенная кнопка отправки */
@@ -781,6 +798,100 @@ strong {
     max-width: 400px;
     margin-top: 0;
     padding-top: 5px;
+}
+
+.privacy-link {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+.privacy-link:hover {
+    text-decoration: underline;
+}
+
+/* Модальное окно */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--white);
+    border: 2px solid var(--black);
+    max-width: 450px;
+    width: 90%;
+    box-shadow: var(--shadow-strong);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid var(--black);
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--gray-dark);
+    padding: 0 5px;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: var(--black);
+}
+
+.modal-body {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.modal-body p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--black);
+}
+
+.modal-footer {
+    padding: 20px;
+    border-top: 1px solid var(--gray-medium);
+    text-align: center;
+}
+
+.modal-btn {
+    background: var(--black);
+    color: var(--white);
+    border: 2px solid var(--black);
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+    border-radius: var(--radius);
+}
+
+.modal-btn:hover {
+    background: var(--white);
+    color: var(--black);
 }
 
 /* Футер */
@@ -873,6 +984,10 @@ strong {
     
     .form-footer-improved {
         align-items: stretch;
+    }
+    
+    .modal-content {
+        width: 95%;
     }
 }
 

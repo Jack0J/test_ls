@@ -84,6 +84,7 @@
                             
                             <div class="logo-signature">
                                 <img src="https://2k-shop.ru/local/templates/2k-shop/img/svg/logo.svg" alt="2K Shop Logo" class="company-logo">
+                                <span class="logo-text">2K Shop — официальный партнер</span>
                             </div>
                         </div>
                     </div>
@@ -102,14 +103,14 @@
                                 <div class="step-number">2</div>
                                 <div class="step-content">
                                     <h5>Приложите анкету</h5>
-                                    <p>Заполненную анкету приложите в форме обратной связи расположенную ниже</p>
+                                    <p>Добавьте заполненную анкету при оформлении заказа</p>
                                 </div>
                             </div>
                             <div class="step">
                                 <div class="step-number">3</div>
                                 <div class="step-content">
-                                    <h5>Получите скидку 30%</h5>
-                                    <p>Подтверждение активации скидки будет отправлено на электронную почту после обработки</p>
+                                    <h5>Получите скидку</h5>
+                                    <p>После проверки скидка 30% будет активирована</p>
                                 </div>
                             </div>
                         </div>
@@ -117,18 +118,18 @@
                         <div class="download-section">
                             <h5>Документы для скачивания</h5>
                             <div class="download-buttons">
-                                <a href="#" class="download-btn modern">
+                                <a href="#" class="download-btn modern" id="templateLink">
                                     <span class="btn-icon">📋</span>
                                     <span class="btn-text">
                                         <span class="btn-title">Шаблон анкеты</span>
-                                        <span class="btn-subtitle">DOCX</span>
+                                        <span class="btn-subtitle">DOCX, 45KB</span>
                                     </span>
                                 </a>
-                                <a href="#" class="download-btn modern">
+                                <a href="#" class="download-btn modern" id="exampleLink">
                                     <span class="btn-icon">📄</span>
                                     <span class="btn-text">
                                         <span class="btn-title">Пример заполнения</span>
-                                        <span class="btn-subtitle">PDF</span>
+                                        <span class="btn-subtitle">PDF, 120KB</span>
                                     </span>
                                 </a>
                             </div>
@@ -173,10 +174,10 @@
                                 <input type="email" id="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="file" class="file-label-improved">
-                                    <span class="file-icon-improved">📎</span>
-                                    <span class="file-text-improved">Прикрепить файл</span>
-                                    <input type="file" id="file" name="file" class="file-input">
+                                <label for="file" class="file-label-improved" id="fileLabel">
+                                    <span class="file-icon-improved" id="fileIcon">📎</span>
+                                    <span class="file-text-improved" id="fileText">Прикрепить файл</span>
+                                    <input type="file" id="file" name="file" class="file-input" accept=".doc,.docx,.pdf,.xls,.xlsx,.jpg,.png">
                                 </label>
                                 <span class="file-hint">Максимальный размер файла: 10MB</span>
                             </div>
@@ -185,7 +186,7 @@
                         <div class="form-column message-column">
                             <div class="form-group message-group">
                                 <label for="message">Сообщение</label>
-                                <textarea id="message" name="message" rows="10"></textarea>
+                                <textarea id="message" name="message" rows="8"></textarea>
                             </div>
                         </div>
                     </div>
@@ -193,7 +194,7 @@
                     <div class="form-footer-improved">
                         <button type="submit" class="submit-btn-improved">Отправить</button>
                         <p class="privacy-note">
-                            Нажимая кнопку «Отправить» на данной странице, вы соглашаетесь с политикой конфиденциальности.
+                            Нажимая кнопку «Отправить» на данной странице, вы соглашаетесь с <a href="/policy/" class="privacy-link">политикой конфиденциальности</a>.
                         </p>
                     </div>
                 </form>
@@ -205,37 +206,136 @@
         </footer>
     </div>
 
+    <!-- Модальное окно -->
+    <div class="modal-overlay" id="successModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title">Сообщение</span>
+                <button class="modal-close" id="modalCloseBtn" aria-label="Закрыть">✕</button>
+            </div>
+            <div class="modal-body">
+                <p>Ваша заявка принята в обработку. Мы свяжемся с вами в ближайшее время.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn" id="modalConfirmBtn">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Установка текущей даты
-        const date = new Date();
-        const formattedDate = date.toLocaleDateString('ru-RU', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric'
-        });
-        document.getElementById('currentDate').textContent = formattedDate;
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Элементы формы ---
+            const form = document.getElementById('contactForm');
+            const fileInput = document.getElementById('file');
+            const fileIcon = document.getElementById('fileIcon');
+            const fileText = document.getElementById('fileText');
+            const fileLabel = document.getElementById('fileLabel');
 
-        // Обработка формы
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.');
-            this.reset();
-        });
+            // --- Состояние для хранения исходных значений ---
+            const originalFileIcon = fileIcon.innerHTML;
+            const originalFileText = fileText.innerHTML;
 
-        // Показать имя выбранного файла
-        document.getElementById('file').addEventListener('change', function(e) {
-            const fileName = this.files[0] ? this.files[0].name : 'Файл не выбран';
-            const label = document.querySelector('.file-text-improved');
-            if (label) {
-                label.textContent = fileName;
+            // --- Функция сброса загрузки файла ---
+            function resetFileInput() {
+                fileInput.value = ''; // очищаем input
+                fileIcon.innerHTML = originalFileIcon;
+                fileText.innerHTML = originalFileText;
+                // Удаляем крестик, если он был добавлен
+                const existingCross = fileLabel.querySelector('.file-remove');
+                if (existingCross) existingCross.remove();
             }
-        });
 
-        // Демо кнопки скачивания
-        document.querySelectorAll('.download-btn.modern').forEach(btn => {
-            btn.addEventListener('click', function(e) {
+            // --- Обработка выбора файла ---
+            fileInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    // Формируем строку с именем и размером
+                    const fileName = file.name;
+                    const fileSize = (file.size / 1024).toFixed(1); // в KB
+                    const fileInfo = `${fileName} (${fileSize} KB)`;
+                    
+                    // Меняем иконку на файл
+                    fileIcon.innerHTML = '📄';
+                    fileText.innerHTML = fileInfo;
+                    
+                    // Добавляем крестик для открепления, если его еще нет
+                    if (!fileLabel.querySelector('.file-remove')) {
+                        const removeBtn = document.createElement('span');
+                        removeBtn.className = 'file-remove';
+                        removeBtn.innerHTML = '✕';
+                        removeBtn.setAttribute('aria-label', 'Удалить файл');
+                        removeBtn.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            resetFileInput();
+                        });
+                        fileLabel.appendChild(removeBtn);
+                    }
+                } else {
+                    resetFileInput();
+                }
+            });
+
+            // --- Модальное окно ---
+            const modal = document.getElementById('successModal');
+            const modalCloseBtn = document.getElementById('modalCloseBtn');
+            const modalConfirmBtn = document.getElementById('modalConfirmBtn');
+
+            function showModal() {
+                modal.style.display = 'flex';
+            }
+
+            function hideModal() {
+                modal.style.display = 'none';
+            }
+
+            modalCloseBtn.addEventListener('click', hideModal);
+            modalConfirmBtn.addEventListener('click', hideModal);
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    hideModal();
+                }
+            });
+
+            // --- Обработка отправки формы ---
+            form.addEventListener('submit', function(e) {
                 e.preventDefault();
-                alert('В реальной версии здесь будет скачивание файла.');
+
+                // Валидация обязательных полей (простая)
+                const name = document.getElementById('name').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const email = document.getElementById('email').value.trim();
+                if (!name || !phone || !email) {
+                    alert('Пожалуйста, заполните все обязательные поля');
+                    return;
+                }
+
+                // Показываем модальное окно
+                showModal();
+
+                // Сбрасываем форму
+                form.reset();
+                // Сбрасываем также состояние загрузки файла (т.к. reset не удаляет кастомный UI)
+                resetFileInput();
+            });
+
+            // --- Установка текущей даты ---
+            const date = new Date();
+            const formattedDate = date.toLocaleDateString('ru-RU', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+            document.getElementById('currentDate').textContent = formattedDate;
+
+            // --- Демо-кнопки скачивания (для теста) ---
+            document.getElementById('templateLink').addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Скачивание шаблона анкеты (демо)');
+            });
+            document.getElementById('exampleLink').addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Скачивание примера заполнения (демо)');
             });
         });
     </script>
